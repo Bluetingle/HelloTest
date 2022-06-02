@@ -1,3 +1,4 @@
+import dev.failsafe.internal.util.Assert;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,9 +33,22 @@ public class BuyDomain {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+       }
         WebElement searchinput = driver.findElement(By.name("domainToCheck"));
         searchinput.sendKeys("testinggodadwithselenium.se");
         driver.findElement(By.className("searchText")).click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        driver.findElement(By.id("testinggodadwithselenium.com")).click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
+// // TODO: 2022-06-02 Find and click on buy domain button
+
